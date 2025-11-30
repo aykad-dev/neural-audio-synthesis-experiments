@@ -34,16 +34,16 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 *   **Architecture:** RVC
 *   **Source:** Raw studio session stems provided by a volunteer (Consented).
 *   **Preprocessing:** None required (High Signal-to-Noise Ratio).
-*   **Observation:** The model converged quickly with "Uncanny" realism in the voice's natural register.
-*   **Limitation (Generalization Failure):** The source singer had a low vocal register. When attempting to infer notes 6 semitones higher, the model failed, introducing distortion and artifacts. This proves that the latent space cannot invent frequencies absent from the training data.
+*   **Observation:** The model converged quickly with realism in the voice's natural register.
+*   **Limitation (Generalization Failure):** The source singer had a low vocal register. When attempting to infer notes 6 semitones higher, the model struggled, producing a more metallic timbre with some distortion and artifacts. This suggests that the latent space has limited ability to extrapolate frequencies far outside the training data.
 *   **🎧 Audio Demonstration:**
     > **Version 1 (Native Register):** [Click to Listen: Normal Sample](samples/demo_low_register.mp3)
-    > **Version 2 (Stressed +6 Semitones):** [Click to Listen: Failure Sample](samples/demo_high_fail.mp3)
+    > **Version 2 (Stressed +6 Semitones):** [Click to Listen: Failure Sample](samples/demo_high_register.mp3)
 
 ### Case Study B: Synthetic Data & Feature Leakage (Miku V2 / Yamaha VSQX)
 *   **Architecture:** RVC
 *   **Source:** Synthetic renders generated from Yamaha VSQX files.
-*   **Preprocessing:** Manual de-reverberation (removing room acoustics) to ensure a "dry" signal.
+*   **Preprocessing:** Little to none required, rendering in highest frequency rate (48KHz)
 *   **Challenge:** The source data consisted of fast-paced singing.
 *   **Result:** While the timbre was accurate, the model suffered from **Feature Leakage**. It "learned" the rapid temporal characteristics (stuttering) rather than just the tone, resulting in unstable inference on slower songs.
 
@@ -52,7 +52,7 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 *   **Source:** Extracted vocals using UVR.
 *   **Engineering:** Extensive manual cleaning in **Audacity**.
     *   **Noise Gating:** Applied to remove background static.
-    *   **Center Channel Extraction:** Used to isolate vocals from instrumental bleed.
+    *   **Center Channel Extraction:** Used to isolate vocals from instrumental and reverb bleed.
 *   **Result:** Successful cloning, but with distinct "Metallic" artifacts.
 *   **Conclusion:** Aggressive audio cleaning is destructive; it removes necessary frequency information, causing the diffusion model to hallucinate metallic noise to fill the gaps.
 
