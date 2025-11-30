@@ -35,7 +35,7 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 *   **Source:** Raw studio session stems provided by a volunteer (Consented).
 *   **Preprocessing:** None required (High Signal-to-Noise Ratio).
 *   **Observation:** The model converged quickly with realism in the voice's natural register.
-*   **Limitation (Generalization Failure):** The source singer had a low vocal register. When attempting to infer notes 6 semitones higher, the model struggled, producing a more metallic timbre with some distortion and artifacts. This suggests that the latent space has limited ability to extrapolate frequencies far outside the training data.
+*   **Limitation (Generalization Failure):** The source singer had a low vocal register. When attempting to infer notes 6 semitones higher, the model produced a more metallic timbre with some distortion and artifacts. When the input falls within the range of the training data, however, the model produces the highest-quality results, highlighting that its latent space has limited ability to extrapolate frequencies far outside the training data.
 *   **🎧 Audio Demonstration:**
     > **Version 1 (Native Register):** [Click to Listen: Normal Sample](samples/demo_low_register.mp3)
     > **Version 2 (Stressed +6 Semitones):** [Click to Listen: Failure Sample](samples/demo_high_register.mp3)
