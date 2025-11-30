@@ -6,7 +6,7 @@ A longitudinal study of voice synthesis technologies conducted between 2022 and 
 
 The objective was to analyze the "Black Box" nature of Generative AI by stress-testing models with diverse data sources—from raw studio recordings to synthetic vocaloid renders and proprietary file extractions. The study focuses on how **Data Quality**, **Dynamic Range**, and **Preprocessing** impact inference fidelity.
 
-## ⚠️ Ethical & Privacy Notice
+## Ethical & Privacy Notice
 **Status: Technical Report & Demo.**
 To strictly adhere to **GDPR** and **Copyright** principles regarding biometric data:
 *   **Training Data:** The raw source recordings remain **private**.
@@ -15,7 +15,7 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 
 ---
 
-## 🛠 Technical Environment
+## Technical Environment
 
 *   **Infrastructure:** Google Colab (Cloud Computing).
 *   **Hardware:** Dynamic GPU Allocation (NVIDIA Tesla T4 / P100 instances).
@@ -28,7 +28,7 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 
 ---
 
-## 🔬 Experiment Log & Findings
+## Experiment Log & Findings
 
 ### Case Study A: The "Clean Data" Bias & Generalization Failure (Studio Model)
 *   **Architecture:** RVC
@@ -66,6 +66,6 @@ To strictly adhere to **GDPR** and **Copyright** principles regarding biometric 
 
 ---
 
-## 📊 Final Conclusion
+## Final Conclusion
 This project demonstrated that in Applied AI, **Data Engineering is the bottleneck**.
 While newer architectures (RVC) provide superior inference speed compared to older ones (Diff-SVC), they cannot compensate for poor dataset quality. The most effective optimization was not hyperparameter tuning, but ensuring the input audio was clean, dry, and contextually rich.
